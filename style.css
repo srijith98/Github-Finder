@@ -1,0 +1,15 @@
+
+.page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+
+#profile {
+    padding-bottom: 2.5rem;
+}
+
+#footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
