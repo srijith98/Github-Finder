@@ -1,5 +1,8 @@
 //Instantiate GitHub
-const github = new GitHub(); 
+const github = new GitHub;
+
+// Instantiate UI
+const ui = new UI;
 
 //Get search input
 const searchInput = document.getElementById('search-user');
@@ -12,9 +15,9 @@ searchInput.addEventListener('keyup', (e) => {
             .then(data => {
                 if(data.profile.message === 'Not Found') {
                     //Show alert
-                    alert('Profile not found')
                 } else {
                     // Show profile
+                    ui.showProfile(data.profile);
                 }
             })
     } else {
