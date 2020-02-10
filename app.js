@@ -23,6 +23,8 @@ searchInput.addEventListener('keyup', (e) => {
                     ui.clearAlert();
                     // Show profile
                     ui.showProfile(data.profile);
+                    // Show repos
+                    ui.showRepos(data.repos);
                 }
             })
     } else {

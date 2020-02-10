@@ -3,6 +3,7 @@ class UI {
         this.profile = document.getElementById('profile');
     }
 
+    // Show user profile
     showProfile(user) {
         this.profile.innerHTML = `
             <div class = "card card-body mb-3">
@@ -27,8 +28,32 @@ class UI {
                 </div>
             </div>
             <h3 class = "page-heading mb-3">Latest Repos</h3>
-            <div id = "repos"></div>
+            <div id = "repos" class="mb-5"></div>
         `;
+    }
+
+    // Show repos
+    showRepos(repos) {
+        const reposDiv = document.getElementById('repos');
+        let output = ``;
+        repos.forEach(function(repo) {
+            output += `
+                <div class="card card-body mb-2">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+                        </div>
+                        <div class="col-md-6">
+                        <span class = "badge badge-primary">Stars: ${repo.stargazers_count}</span>
+                        <span class = "badge badge-secondary">Forks: ${repo.forks_count}</span>
+                        <span class = "badge badge-success">Followers: ${repo.watchers}</span>
+                        </div>
+                    </div>
+                </div>
+            `
+        });
+
+        reposDiv.innerHTML = output;
     }
 
     //Show alert
